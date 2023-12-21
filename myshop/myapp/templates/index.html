@@ -1,34 +1,31 @@
-{% load static %}
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static '/styles.css' %}">
-    <title>Document</title>
-</head>
-<body>
-    <nav>
-        <div>
-            <div>
+ {% extends "base.html" %}
+ {% load static %}
+
+ {% block content %}
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex space-x-7">
                 <div>
-                    <div class="flex">
+                    <a href="#" class="flex items-center px-2 py-4">
                         <img class="h-8 w-8" src="{% static '/images/sound-waves.png' %}" alt="logo">
-                        <span class="text-xl">Pro shop</span>
-                    </div>
+                        <span class="text-black font-semibold text-xl">Onimum's shop</span>
+                    </a>
+                </div>
+                <div class="items-center flex space-x-1">
+                    <a href="#" class="py-4 px-2 text-black font-semibold border-b-4 border-green-500">Home</a>
+                    <a href="#" class="py-4 px-2 text-black font-semibold">About</a>
+                    <a href="#" class="py-4 px-2 text-black font-semibold">Contacts</a>
                 </div>
             </div>
         </div>
     </nav>
+
     <h4>
-<!--        <a href="/myapp/hello/{{item.id}}">-->
+        <!--        <a href="/myapp/hello/{{item.id}}">-->
         {% for item in items %}
         <a href="{% url 'myapp:detail' item.id%}">
             ID: {{item.id}} | Name: {{item.name}} | Price: {{item.price}} | Description:{{item.description}} <br/>
         </a>
         {% endfor %}
     </h4>
-</body>
-</html>
+ {% endblock content%}
