@@ -156,6 +156,5 @@ class PaymentSuccessView(TemplateView):
         order.save()
         return render(request, self.template_name)
 
-
 class PaymentFailedView(TemplateView):
     template_name = "payment_failed.html"

@@ -21,7 +21,7 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript">
-    console.log('Stripe Publishable Key:', '{{ stripe_publishable_key }}');
+    console.log('Stripe Publishable Key:', "{{ stripe_publishable_key }}");
 
     // Create an instance of the Stripe object with your publishable API key
     var stripe = Stripe('{{ stripe_publishable_key }}');
